@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: 1.소스코드 다운로드
         uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.PAT }}
 
       - name: 7.Docker Image Build
         run: docker build  -t ${{ secrets.DOCKER_USERNAME }}/simple-web:${{ env.DOCKER_TAG }} .
@@ -41,7 +43,7 @@ jobs:
       - name: 10.서비스 리포지토리 체크아웃
         uses: actions/checkout@v4
         with:
-          repository: daain/simple-web-platform
+          repository: kang-dain/simple-web-platform
           ref: main
           path: .
           token: ${{ secrets.PAT }}
