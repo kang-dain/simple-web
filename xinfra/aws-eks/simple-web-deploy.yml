@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
         - name: simple-web
-          image: <your-dockerhub-id>/simple-web
+          image: daain/simple-web
           ports:
             - containerPort: 80
